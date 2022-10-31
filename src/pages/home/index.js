@@ -5,12 +5,12 @@ import {useDispatch} from "react-redux";
 import {updateChainId}  from "@/state/application/actions";
 import {fetchPost} from  '@/state/application/reducer'
 import Web3 from 'web3'
-
+import './index.less'
 const Home = props => {
     const {t} = useTranslation();
     const dispatch = useDispatch();
     useEffect(()=>{
-        i18n.changeLanguage('zh')
+        // i18n.changeLanguage('zh')
          dispatch(fetchPost({dddd:1111}))
     },[])
     const handleChangeLang = () => {
@@ -18,7 +18,7 @@ const Home = props => {
     }
     return (
         <div>
-            <h1 onClick={handleChangeLang}>{t('name')}</h1>
+            <h1 className='container' onClick={handleChangeLang}>{t('name')}</h1>
 
         </div>
     )

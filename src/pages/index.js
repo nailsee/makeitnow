@@ -1,6 +1,6 @@
 import {Routes, Route, Link, Outlet} from 'react-router-dom';
 import Home from '@/pages/home';
-import Layout from '@/components/layout'
+import Layout from '@/components/Layout'
 
 const App = props => {
     return (
