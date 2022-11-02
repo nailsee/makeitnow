@@ -1,5 +1,9 @@
-
 @font-face {
   fontFamily: 'Inter';
   src: url('../assets/fonts/inter/Inter-VariableFont_slnt,wght.ttf')
+}
+
+@font-face {
+  fontFamily: 'Impact';
+  src: url('../assets/fonts/impact-2.ttf')
 }

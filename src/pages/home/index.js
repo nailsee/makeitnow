@@ -5,6 +5,8 @@ import {useDispatch} from "react-redux";
 import {updateChainId}  from "@/state/application/actions";
 import {fetchPost} from  '@/state/application/reducer'
 import Web3 from 'web3'
+import {images} from '@/constant'
+
 import './index.less'
 const Home = props => {
     const {t} = useTranslation();
@@ -17,8 +19,21 @@ const Home = props => {
         i18n.changeLanguage('en')
     }
     return (
-        <div>
-            <h1 className='container' onClick={handleChangeLang}>{t('name')}</h1>
+        <div className='home'>
+          <div className='banner'>
+            <div className='banner-title'>
+                <span>Markitnow</span>
+                <span>A New Review System for Web3.0 Life</span>
+            </div>
+            <div className='mouse'>
+                <span />
+            </div>
+            <div className='contact-us'>
+                <img src={images.twitter} />
+                <img src={images.tg} />
+
+            </div>
+            </div>  
 
         </div>
     )
