@@ -1,7 +1,12 @@
+.project-box {
+}
 header {
   height: 60px;
   background: linear-gradient(to right, #012727, #1D4444);
   border-bottom: 1px solid #184040;
+  position: sticky;
+  top: 0px;
+  z-index: 2;
   .header-box {
     margin: 0 auto;
     display: flex;
@@ -23,6 +28,42 @@ header {
       line-height: 34px;
       text-align: center;
       color: #FFFFFF;
+      cursor: pointer;
+    }
+  }
+}
+.nav {
+  height: 60px;
+  background: #FFFFFF;
+  box-shadow: 0px 8px 10px rgba(0, 0, 0, 0.05);
+  position: sticky;
+  top: 60px;
+  z-index: 2;
+
+  ul {
+    height: 60px;
+    width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    li {
+      margin-right: 25px;
+      padding: 6px 14px;
+      font-family: Inter;
+      font-style: normal;
+      font-weight: 600;
+      font-size: 14px;
+      line-height: 17px;
+      /* identical to box height */
+      border-radius: 46px;
+
+      text-align: center;
+      cursor: pointer;
+      &.active {
+        background: #00D18B;
+        color: #FFFFFF;
+
+      }
     }
   }
 }
