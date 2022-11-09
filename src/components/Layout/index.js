@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { Routes, Route, Link, Outlet } from 'react-router-dom';
+import React, { useEffect, useState } from 'react';
+import { Routes, Route, Link, Outlet, useLocation, useNavigate } from 'react-router-dom';
 import './header.less'
 import { images } from '@/constant'
 import Banner from '../Banner'
@@ -33,22 +33,28 @@ const routerList = [{
 },
 ]
 const Layout = props => {
-
+    let location = useLocation()
+    let navigate = useNavigate()
     const [active, setActive] = useState('/')
     const [isModelOpen, setIsModelOpen] = useState(false)
     const [isLoading, setIsLoading] = useState(false);
 
     const handleJumpTo = (hash) => {
         setActive(hash)
+        navigate(hash)
     }
     const handleConnectWallet = () => {
         setIsModelOpen(true)
     }
+    useEffect(()=>{
+        console.log(props,location);
+        setActive(location.pathname)
+    },[location])
     return (
         <div className='project-box'>
             <header>
                 <div className='header-box'>
-                    <img className={'header-logo'} src={images.logo} />
+                    <img onClick={()=>navigate('/')} className={'header-logo'} src={images.logo} />
                     <div onClick={handleConnectWallet} className='wallet'>Connect Wallet</div>
                 </div>
             </header>

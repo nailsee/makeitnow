@@ -4,6 +4,7 @@ import Layout from '@/components/Layout'
 import Crypto from '@/pages/crypto';
 import Exchange from '@/pages/exchange';
 import NFT from '@/pages/nft';
+import Detail from '@/pages/detail';
 
 const App = props => {
     return (
@@ -12,7 +13,11 @@ const App = props => {
                 <Route index element={<Home />} />
                 <Route  path={'/crypto'} element={<Crypto />} />
                 <Route  path={'/exchange'} element={<Exchange />} />
-                <Route  path={'/nft'} element={<NFT />} />
+                <Route  path={'/nft'} element={<NFT />} >
+
+                </Route>
+                <Route    path="/nft/detail/:id" element={<Detail />} />
+
 
             </Route>
             <Route path='*' element={

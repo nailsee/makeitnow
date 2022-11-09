@@ -9,8 +9,11 @@ import { images } from '@/constant'
 import { Pagination, Rate } from 'antd'
 import RateComponent from './components/rank'
 import './index.less'
+import { useNavigate } from 'react-router-dom';
 const Home = props => {
     const { t } = useTranslation();
+    let navigate = useNavigate()
+
     const dispatch = useDispatch();
     useEffect(() => {
         // i18n.changeLanguage('zh')
@@ -21,6 +24,9 @@ const Home = props => {
     }
     const handleOptions = (e) => {
         console.log(e)
+    }
+    const handleDetailJump = (id) => {
+        navigate('/nft/detail/'+id)
     }
     return (
         <div className='home'>
@@ -34,7 +40,7 @@ const Home = props => {
                         {
                             new Array(4).fill().map((obj, i) => {
                                 return (
-                                    <div className='box-nft-content' key={i}>
+                                    <div onClick={()=>handleDetailJump(i)} className='box-nft-content' key={i}>
                                         <img className='nft-img' src={images.nft1} />
                                         <div className='nft-name'>Primate #2657</div>
                                         <RateComponent />
